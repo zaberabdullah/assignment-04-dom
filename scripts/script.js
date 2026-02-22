@@ -49,14 +49,14 @@ function toggleStyle(id){
     rejectFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white', 'bg-gray-300', 'text-black', 'bg-white', 'text-gray-500');
 
 
-    allFilterBtn.classList.add('bg-gray-300', 'text-black');
-    interviewFilterBtn.classList.add('bg-gray-300', 'text-black');
-    rejectFilterBtn.classList.add('bg-gray-300', 'text-black');
+    allFilterBtn.classList.add('bg-white', 'text-black');
+    interviewFilterBtn.classList.add('bg-white', 'text-black');
+    rejectFilterBtn.classList.add('bg-white', 'text-black');
 
 
     const selected = document.getElementById(id);
 
-    selected.classList.remove('bg-gray-300', 'text-black');
+    selected.classList.remove('bg-white', 'text-black');
     selected.classList.add('bg-[#3B82F6]', 'text-white');
 
     
