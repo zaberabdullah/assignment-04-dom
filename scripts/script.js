@@ -92,12 +92,18 @@ allCardSection.addEventListener("click", function (event) {
 
     const companyName = parenNode.querySelector(".company-name").innerText;
     const jobTitle = parenNode.querySelector(".job-title").innerText;
+    const salaryInfo = parenNode.querySelector(".salary-info").innerText;
+    const status = parenNode.querySelector(".status-badge").innerText;
+    const jobDescription = parenNode.querySelector(".job-description").innerText;
 
     parenNode.querySelector(".status-badge").innerText = "INTERVIEW";
 
     const cardInfo = {
       companyName,
       jobTitle,
+      salaryInfo,
+      status,
+      jobDescription,
       status: "INTERVIEW",
     };
 
@@ -118,12 +124,18 @@ allCardSection.addEventListener("click", function (event) {
 
     const companyName = parenNode.querySelector(".company-name").innerText;
     const jobTitle = parenNode.querySelector(".job-title").innerText;
+    const salaryInfo = parenNode.querySelector(".salary-info").innerText;
+    const status = parenNode.querySelector(".status-badge").innerText;
+    const jobDescription = parenNode.querySelector(".job-description").innerText;
 
     parenNode.querySelector(".status-badge").innerText = "REJECTED";
 
     const cardInfo = {
       companyName,
       jobTitle,
+      salaryInfo,
+      status,
+      jobDescription,
       status: "REJECTED",
     };
 
@@ -150,18 +162,23 @@ function renderCards(list, type) {
   for (let job of list) {
     let div = document.createElement("div");
     div.className = "w-[80%] mx-auto my-5";
-    div.innerHTML = `
-        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm space-y-3">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h2 class="text-xl font-bold">${job.companyName}</h2>
-                    <p class="text-gray-400 font-medium text-lg">${job.jobTitle}</p>
-                </div>
-            </div>
+    div.innerHTML = `      
+    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm space-y-3">
+          <div class="flex justify-between items-start">
             <div>
-                <span class="${badgeColor} px-4 py-2 rounded text-base font-bold uppercase">${job.status}</span>
-                <p class="text-gray-600 mt-4">You have successfully added this to your tracker.</p>
+              <h2 class="text-xl font-bold text-black">${job.companyName}</h2>
+              <p class="text-gray-400 font-medium text-lg">${job.jobTitle}</p>
             </div>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-400 mt-2">
+            <span>${job.salaryInfo}</span> 
+          </div>
+
+          <div>
+            <span class="${job.badgeColor} px-4 py-2 rounded text-base font-bold uppercase">${job.status}</span>
+            <p class="text-gray-600 mt-4">${job.jobDescription}</p>
+          </div>
         </div>
         `;
     filterSection.appendChild(div);
