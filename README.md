@@ -5,7 +5,7 @@ We Can take a id by using getElementById, as we know that ID is specefic and pow
 
 
 
-3. How do you create and insert a new element into the DOM?
+2. How do you create and insert a new element into the DOM?
    
 Ans: There are some ways to create and insert a new element into the DOM: Such as:
 * CreateElement (we can use createElement to create a New Element into the Dom.
@@ -21,7 +21,7 @@ and for this reason we can use addEventListner()on a parent element. And this be
 
 
 
-5. What is Event Delegation in JavaScript? Why is it useful?
+4. What is Event Delegation in JavaScript? Why is it useful?
    
 Ans: Event Delegation is process where we add one event listener to a parent element instead of multiple listeners to a child elements, this is related to event bubbling.....
 
