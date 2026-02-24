@@ -21,6 +21,22 @@ function calculateCount() {
 
   interviewCount.innerText = interviewList.length;
   rejectCount.innerText = rejectedList.length;
+
+  const countCard = document.getElementById("available-count");
+
+  if (currentStatus === "all-filter-btn") {
+    countCard.innerText = `${allCards} jobs`;
+
+    const noJobsText = document.getElementById("no-jobs-container");
+    if (allCards === 0) {
+      noJobsText.classList.remove("hidden");
+    } else {
+      noJobsText.classList.add("hidden");
+    }
+  } else {
+    let currentList = currentStatus === "interview-filter-btn" ? interviewList.length : rejectedList.length;
+    countCard.innerText = `(${currentList} out of ${allCards} jobs)`;
+  }
 }
 
 calculateCount();
@@ -83,6 +99,7 @@ function toggleStyle(id) {
     check(rejectedList);
     renderCards(rejectedList, "reject");
   }
+  calculateCount();
 }
 
 allCardSection.addEventListener("click", function (event) {
@@ -93,18 +110,22 @@ allCardSection.addEventListener("click", function (event) {
     const companyName = parenNode.querySelector(".company-name").innerText;
     const jobTitle = parenNode.querySelector(".job-title").innerText;
     const salaryInfo = parenNode.querySelector(".salary-info").innerText;
-    const status = parenNode.querySelector(".status-badge").innerText;
     const jobDescription = parenNode.querySelector(".job-description").innerText;
+    
+    const badgeElement = parenNode.querySelector(".status-badge");
 
-    parenNode.querySelector(".status-badge").innerText = "INTERVIEW";
+    badgeElement.innerText = "INTERVIEW";
+    badgeElement.classList.remove("bg-blue-50", "text-blue-900", "bg-green-100", "text-green-700");
+    badgeElement.classList.add("bg-green-100", "text-green-700");
 
     const cardInfo = {
       companyName,
       jobTitle,
       salaryInfo,
-      status,
+      badgeElement,
       jobDescription,
       status: "INTERVIEW",
+      badgeColor: "bg-green-100 text-green-700",
     };
 
     const jobExist = interviewList.find((item) => item.companyName == cardInfo.companyName);
@@ -125,18 +146,22 @@ allCardSection.addEventListener("click", function (event) {
     const companyName = parenNode.querySelector(".company-name").innerText;
     const jobTitle = parenNode.querySelector(".job-title").innerText;
     const salaryInfo = parenNode.querySelector(".salary-info").innerText;
-    const status = parenNode.querySelector(".status-badge").innerText;
     const jobDescription = parenNode.querySelector(".job-description").innerText;
+    
+    const badgeElement = parenNode.querySelector(".status-badge");
 
-    parenNode.querySelector(".status-badge").innerText = "REJECTED";
+    badgeElement.innerText = "REJECTED";
+    badgeElement.classList.remove("bg-blue-50", "text-blue-900", "bg-green-100", "text-green-700");
+    badgeElement.classList.add("bg-red-100", "text-red-700");
 
     const cardInfo = {
       companyName,
       jobTitle,
       salaryInfo,
-      status,
+      badgeElement,
       jobDescription,
       status: "REJECTED",
+      badgeColor: "bg-red-100 text-red-700",
     };
 
     const jobExist = rejectedList.find((item) => item.companyName == cardInfo.companyName);
@@ -183,4 +208,21 @@ function renderCards(list, type) {
         `;
     filterSection.appendChild(div);
   }
+}
+
+function deleteCard(cardID) {
+  const card = document.getElementById(cardID);
+
+  const cardSection = card.parentNode;
+
+  const companyName = card.querySelector(".company-name").innerText;
+  interviewList = interviewList.filter(function (item) {
+    return item.companyName !== companyName;
+  });
+  rejectedList = rejectedList.filter(function (item) {
+    return item.companyName !== companyName;
+  });
+
+  cardSection.remove();
+  calculateCount();
 }
