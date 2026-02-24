@@ -102,6 +102,10 @@ function toggleStyle(id) {
   calculateCount();
 }
 
+
+
+
+
 allCardSection.addEventListener("click", function (event) {
   if (event.target.classList.contains("btn-success")) {
     const parenNode = event.target.parentNode.parentNode;
@@ -115,7 +119,7 @@ allCardSection.addEventListener("click", function (event) {
     const badgeElement = parenNode.querySelector(".status-badge");
 
     badgeElement.innerText = "INTERVIEW";
-    badgeElement.classList.remove("bg-blue-50", "text-blue-900", "bg-green-100", "text-green-700");
+    badgeElement.classList.remove("bg-blue-50", "text-blue-900", "bg-red-100", "text-red-700");
     badgeElement.classList.add("bg-green-100", "text-green-700");
 
     const cardInfo = {
@@ -178,6 +182,12 @@ allCardSection.addEventListener("click", function (event) {
     calculateCount();
   }
 });
+
+
+
+
+
+
 
 function renderCards(list, type) {
   filterSection.innerHTML = "";
