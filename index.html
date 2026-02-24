@@ -21,7 +21,7 @@
   <body class="font-family: Geist, sans-serif;">
     <header class="w-[80%] mx-auto">
       <h1 class="text-4xl font-bold pt-10">Job Application Tracker</h1>
-      <div class="grid grid-cols-3 gap-5 py-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-4">
         <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
           <p>Total</p>
           <p id="total" class="text-2xl">0</p>
@@ -46,7 +46,7 @@
         <h2 class="text-2xl font-bold">Available Jobs</h2>
         <p id="available-count">8 jobs</p>
       </div>
-      <div class="mt-4 flex gap-5">
+      <div class="mt-4 flex flex-wrap justify-center md:justify-start gap-5">
         <button
           onclick="toggleStyle('all-filter-btn')"
           id="all-filter-btn"
@@ -82,7 +82,10 @@
               <h2 class="text-xl font-bold company-name">Mobile First Corp</h2>
               <p class="text-gray-400 font-medium text-lg job-title">React Native Developer</p>
             </div>
-            <button onclick="deleteCard('card-1')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-1')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -114,7 +117,10 @@
               <h2 class="text-xl font-bold company-name">WebFlow Agency</h2>
               <p class="text-gray-400 font-medium text-lg job-title">Web Designer & Developer</p>
             </div>
-            <button onclick="deleteCard('card-2')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-2')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -146,7 +152,10 @@
               <h2 class="text-xl font-bold company-name">DataViz Solutions</h2>
               <p class="text-gray-400 font-medium text-lg job-title">Data Visualization Specialist</p>
             </div>
-            <button onclick="deleteCard('card-3')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-3')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -178,7 +187,10 @@
               <h2 class="text-xl font-bold company-name">CloudFirst Inc</h2>
               <p class="text-gray-400 font-medium text-lg job-title">Backend Developer</p>
             </div>
-            <button onclick="deleteCard('card-4')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-4')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -210,7 +222,10 @@
               <h2 class="text-xl font-bold company-name">Innovation Labs</h2>
               <p class="text-gray-400 font-medium text-lg job-title">UI/UX Engineer</p>
             </div>
-            <button onclick="deleteCard('card-5')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-5')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -242,7 +257,10 @@
               <h2 class="text-xl font-bold company-name">MegaCorp Solutions</h2>
               <p class="text-gray-400 font-medium text-lg job-title">JavaScript Developer</p>
             </div>
-            <button onclick="deleteCard('card-6')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-6')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -274,7 +292,10 @@
               <h2 class="text-xl font-bold company-name">StartupXYZ</h2>
               <p class="text-gray-400 font-medium text-lg job-title">Full Stack Engineer</p>
             </div>
-            <button onclick="deleteCard('card-7')"  class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-7')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
@@ -306,7 +327,10 @@
               <h2 class="text-xl font-bold company-name">TechCorp Industries</h2>
               <p class="text-gray-400 font-medium text-lg job-title">Senior Frontend Developer</p>
             </div>
-            <button onclick="deleteCard('card-8')" class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn">
+            <button
+              onclick="deleteCard('card-8')"
+              class="border p-2 text-gray-500 rounded-full hover:text-red-500 delete-btn"
+            >
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
