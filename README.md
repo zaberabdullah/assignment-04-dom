@@ -1,0 +1,3 @@
+**difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll: **
+We Can take a id by using getElementById, as we know that ID is specefic and powerful, we can give an html element ID and we can call it by using getElementById, on the otherhand we can call a Class by using getElementByClass, we can call a specific class by using QuerySelector and we can call all the classes into an html element by using QuerySelectorAll...
+
