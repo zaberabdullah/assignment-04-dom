@@ -28,5 +28,6 @@ Ans: Event Delegation is process where we add one event listener to a parent ele
 
 
 5.What is the difference between preventDefault() and stopPropagation() methods?
+
 Ans: PreventDefault Stop the default behavior of an element.. StopPropagation helps to stop bubbling of a parent element..
 These two are works with the event... 
